@@ -30,6 +30,6 @@ def get_first_basement_character():
             floor -= 1
             char_count += 1
         if floor < 0:
-            print(char_count)
+            return(char_count)
 
-    print(char_count)
+    return(char_count)

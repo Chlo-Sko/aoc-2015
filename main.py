@@ -18,8 +18,9 @@ def print_greeting():
 # Main Function
 if __name__ == "__main__":
     print_greeting()
-    day1.get_first_basement_character()
-    day3.get_duplicate_house_deliveries()
+    print(day5.nice_strings())
+
+
 
 
 

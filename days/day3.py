@@ -25,11 +25,22 @@ def calc_move(x, y, direction):
 
 # Calculate Duplicate Houses Based on Directional Input
 def get_duplicate_house_deliveries():
-    x = 0
-    y = 0
+    santaX = 0
+    santaY = 0
+    robosantaX = 0
+    robosantaY = 0
     houses_visited = {}
-    increment_house(x, y, houses_visited)
+    increment_house(santaX, santaY, houses_visited)
+    increment_house(robosantaX, robosantaY, houses_visited)
+    santasTurn = True
+
     for direction in input:
-        x, y = calc_move(x, y, direction)
-        increment_house(x, y, houses_visited)
+        if santasTurn:
+            santaX, santaY = calc_move(santaX, santaY, direction)
+            increment_house(santaX, santaY, houses_visited)
+            santasTurn = False
+        else:
+            robosantaX, robosantaY = calc_move(robosantaX, robosantaY, direction)
+            increment_house(robosantaX, robosantaY, houses_visited)
+            santasTurn = True
     print("Duplicate House Deliveries: ", len(houses_visited))
